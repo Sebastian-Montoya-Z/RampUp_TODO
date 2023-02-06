@@ -1,0 +1,15 @@
+[Unit]
+Description=MicroService app - todos-api service
+After=network.target
+
+[Service]
+Type=simple
+User=vagrant
+WorkingDirectory=/home/vagrant/RampUp/RampUp_TODO/todos-api
+Environment=JWT_SECRET=PRFT TODO_API_PORT=8082
+ExecStart=npm start
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
