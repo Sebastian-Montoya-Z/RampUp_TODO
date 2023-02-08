@@ -1,0 +1,15 @@
+[Unit]
+Description=MicroService app - log-message-processor service
+After=network.target
+
+[Service]
+Type=simple
+User=vagrant
+WorkingDirectory=/home/vagrant/RampUp_TODO/log-message-processor
+Environment=REDIS_HOST=127.0.0.1 REDIS_PORT=6379 REDIS_CHANNEL=log_channel
+ExecStart=/usr/bin/python3 main.py
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
