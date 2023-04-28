@@ -17,7 +17,7 @@ pipeline {
             steps{
                 script {
                     sh 'ls'
-                    sh 'docker build ./log-message-processor -t sebastianmontoyaz/rampup-perfi:log'
+                    sh 'DOCKER_BUILDKIT=1 docker build ./log-message-processor -t sebastianmontoyaz/rampup-perfi:log'
                 }
             }
         }
